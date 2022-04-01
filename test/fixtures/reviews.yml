@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyString
+  belong_to: MyString
+  score: 1
+  article: one
+
+two:
+  title: MyString
+  description: MyString
+  belong_to: MyString
+  score: 1
+  article: two
