@@ -13,7 +13,7 @@ module Api
       def show
         @article = Article.find_by(slug: params[:slug])
 
-        render json: ArticleSerializer.new(@article).serialized_json
+        render json: ArticleSerializer.new(@article, options).serialized_json
         # render json: {status: 'SUCCESS', message:'Artigo carregado', data: @article}, status: 200
       end
     
