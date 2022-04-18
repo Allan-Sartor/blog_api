@@ -59,7 +59,7 @@ Para o desenvolvimento do projeto, foram utilizados as principais ferramentas:
 
 <h3>Para testar as requisições do server acessar documentação POSTMAN</h3>
 
-<b>Documentação</b><a href="https://www.postman.com/aerospace-pilot-75824004/workspace/articles/documentation/19698363-48162d82-ac9d-4793-b566-c680be211c67">acessar</a>.
+<b>Documentação: </b> <a href="https://www.postman.com/aerospace-pilot-75824004/workspace/articles/documentation/19698363-48162d82-ac9d-4793-b566-c680be211c67">acessar</a>.
 
 <hr>
 <h4 align="center">
