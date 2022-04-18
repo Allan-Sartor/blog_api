@@ -9,7 +9,7 @@ module Api
         # render json: {status: 'SUCCESS', message:'Artigos carregados', data: @articles}, status: 200
       end
     
-      # GET /articles/1
+      # GET /articles/slug
       def show
         @article = Article.find_by(slug: params[:slug])
 
@@ -30,7 +30,7 @@ module Api
         end
       end
     
-      # PATCH/PUT /articles/1 our slug
+      # PATCH/PUT /articles/slug
       def update
         @article = Article.find_by(slug: params[:slug])
 
@@ -43,7 +43,7 @@ module Api
         end
       end
     
-      # DELETE /articles/1
+      # DELETE /articles/slug
       def destroy
         @article = Article.find_by(slug: params[:slug])
 

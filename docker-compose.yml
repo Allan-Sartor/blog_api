@@ -1,0 +1,17 @@
+version: "3.3"
+services:
+  db:
+    image: postgres
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: 192476
+  api:
+    build: .
+    command: "rails s -p 3001 -b '0.0.0.0'"
+    volumes:
+      - .:/blog_api
+    ports:
+      - "3001:3001"
+    depends_on:
+      - db
