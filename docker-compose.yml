@@ -1,16 +1,17 @@
-version: "3.3"
+version: '3'
 services:
   db:
     image: postgres
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
     environment:
-      POSTGRES_PASSWORD: 192476
-  api:
+      - POSTGRES_USERNAME=postgres
+      - POSTGRES_PASSWORD=postgres
+  app:
     build: .
-    command: "rails s -p 3001 -b '0.0.0.0'"
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3001 -b '0.0.0.0'"
     volumes:
-      - .:/blog_api
+      - .:/myapp
     ports:
       - "3001:3001"
     depends_on:

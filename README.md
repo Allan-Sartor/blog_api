@@ -1,8 +1,8 @@
 <h2>
-  📃 Sobre o servidor
+  📃 Sobre a API
 </h2>
 
-<i>Blog_api</i> é um servidor que armazena artigos junto com suas avaliações, dentro de um database em PostgreSQL
+<i>Blog_api</i> é uma API que armazena artigos junto com suas avaliações, dentro de um database em PostgreSQL
 
 <h2>🔧 Ferramentas utilizadas</h2>
 Para o desenvolvimento do projeto, foram utilizados as principais ferramentas:
@@ -20,40 +20,30 @@ Para o desenvolvimento do projeto, foram utilizados as principais ferramentas:
   <li>Também é <b>preciso</b> ter o <a href="https://docs.docker.com/get-docker/">Docker</a>.</li>
 </ul>
 
-<h3>Caso tudo esteja certo, basta seguir os passos abaixo.</h3>
+<h3>Caso tudo esteja certo, abaixo teremos duas formas de rodar o servidor.</h3>
 
 1. Clone o repositório em sua maquina utilizando :
 
 ```sh
   $ git clone https://github.com/Allan-Sartor-Pontomais/blog_api.git
 ```
-2. Instale as dependencias do projeto :
-```sh
-  $ docker-compose up
-```
-3. Rode o projeto :
-```sh
-  $ docker-compose up
-```
-3. Se tudo estiver certo, a aplicação irá iniciar no endereço http://localhost:3001/
-
-<br />
-
-<h3> Caso queira rodar o servidor sem o Docker, sigo o passo a passo abaixo: </h3>
-
-1. Clone o repositório em sua maquina utilizando:
-```sh
-  $ git clone https://github.com/Allan-Sartor-Pontomais/blog_api.git
-```
 2. Instale as dependencias do projeto:
 ```sh
-  $ bundle install
+  $ docker-compose up
 ```
-3. Rode o projeto :
+3. Após finalizar o comando acima feche o servidor "Ctrl+C" e rode:
 ```sh
-  $ rails s -p 3001
+  $ docker-compose run app rake db:create db:migrate
 ```
-3. Se tudo estiver certo, a aplicação irá iniciar no endereço http://localhost:3001/
+4. Para inserir seeds no banco de dados.
+```sh
+  $ docker-compose run app rake db:seed
+```
+5. Rode o projeto:
+```sh
+  $ docker-compose up
+```
+3. Se tudo estiver certo, a aplicação irá iniciar no endereço http://localhost:3001/v1/api/
 
 <br />
 

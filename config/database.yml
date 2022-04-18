@@ -14,10 +14,32 @@
 # Configure Using Gemfile
 # gem "pg"
 
+# default: &default
+#   adapter: postgresql
+#   encoding: unicode
+#   pool: 5
+
+# development:
+#   <<: *default
+#   database: blog_api_development
+
+# test:
+#   <<: *default
+#   database: blog_api_test
+
+# production:
+#   <<: *default
+#   database: blog_api_production
+#   username: admin
+#   password: 192476
+
 default: &default
   adapter: postgresql
   encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: db
+  username: postgres
+  password: postgres
+  pool: 5
 
 development:
   <<: *default
@@ -25,10 +47,5 @@ development:
 
 test:
   <<: *default
-  database: blog_api_test
-
-production:
-  <<: *default
-  database: blog_api_production
-  username: admin
-  password: <%= ENV["BLOG_API_DATABASE_PASSWORD"] %>
+  database: blog_api_test  
+  
