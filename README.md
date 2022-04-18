@@ -16,7 +16,7 @@ Para o desenvolvimento do projeto, foram utilizados as principais ferramentas:
 
 <h2>⚙ Rodando a aplicação</h2>
 <ul>
-  <li>É <b>necessário</b> possuir o ter o <a href="https://docs.docker.com/get-docker/">Docker</a>.</li>
+  <li>É <b>necessário</b> possuir o <a href="https://docs.docker.com/get-docker/">Docker</a>.</li>
 </ul>
 
 <h3>Caso tudo esteja certo, siga o passo a passo abaixo:</h3>
