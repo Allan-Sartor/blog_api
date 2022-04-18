@@ -52,5 +52,5 @@ Para o desenvolvimento do projeto, foram utilizados as principais ferramentas:
 <hr>
 
 <h4 align="center">
-    By <a href="https://www.linkedin.com/in/allan-gustavo-aa6844131/" target="_blank">Allan Sartor</a>
+    Created by <a href="https://www.linkedin.com/in/allan-gustavo-aa6844131/" target="_blank">Allan Sartor</a>
 </h4>
