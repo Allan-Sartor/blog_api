@@ -43,13 +43,14 @@ Para o desenvolvimento do projeto, foram utilizados as principais ferramentas:
 ```
 3. Se tudo estiver certo, a aplicação irá iniciar no endereço http://localhost:3001/v1/api/
 
-<br />
+<hr>
 
 <h3>Para testar as requisições do server acessar documentação POSTMAN</h3>
 
 <b>Documentação: </b> <a href="https://www.postman.com/aerospace-pilot-75824004/workspace/articles/documentation/19698363-48162d82-ac9d-4793-b566-c680be211c67">acessar</a>.
 
 <hr>
+
 <h4 align="center">
     By <a href="https://www.linkedin.com/in/allan-gustavo-aa6844131/" target="_blank">Allan Sartor</a>
 </h4>
