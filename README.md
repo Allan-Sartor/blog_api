@@ -16,13 +16,12 @@ Para o desenvolvimento do projeto, foram utilizados as principais ferramentas:
 
 <h2>⚙ Rodando a aplicação</h2>
 <ul>
-  <li>É <b>necessário</b> possuir o <a href="https://www.ruby-lang.org/pt/downloads/">Ruby 3.0.0</a> e <a href="https://rubyonrails.org/">Rails</a> em sua máquina.</li>
-  <li>Também é <b>preciso</b> ter o <a href="https://docs.docker.com/get-docker/">Docker</a>.</li>
+  <li>É <b>necessário</b> possuir o ter o <a href="https://docs.docker.com/get-docker/">Docker</a>.</li>
 </ul>
 
 <h3>Caso tudo esteja certo, abaixo teremos duas formas de rodar o servidor.</h3>
 
-1. Clone o repositório em sua maquina utilizando :
+1. Clone o repositório em sua maquina utilizando:
 
 ```sh
   $ git clone https://github.com/Allan-Sartor-Pontomais/blog_api.git
