@@ -41,7 +41,7 @@ Para o desenvolvimento do projeto, foram utilizados as principais ferramentas:
 ```sh
   $ docker-compose up
 ```
-3. Se tudo estiver certo, a aplicação irá iniciar no endereço http://localhost:3001/v1/api/
+3. Se tudo estiver certo, a API irá iniciar no endereço http://localhost:3001/v1/api/
 
 <hr>
 
