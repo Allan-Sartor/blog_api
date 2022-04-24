@@ -18,6 +18,9 @@ gem 'rack-cors'
 # Serializer API
 gem 'fast_jsonapi'
 
+# Pages Count
+gem "kaminari"
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 

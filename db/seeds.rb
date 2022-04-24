@@ -1,45 +1,29 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-
-articles = Article.create([
-  {
-    title: "Artigo Cientifico1",
-    body: "Mediante tal definição, um questionamento que se mostra relevante faz referência à diferença demarcada entre um artigo e uma monografia."
-  },
-  {
-    title: "Artigo Cientifico2",
-    body: "Mediante tal definição, um questionamento que se mostra relevante faz referência à diferença demarcada entre um artigo e uma monografia."
-  },
-  {
-    title: "Artigo Cientifico3",
-    body: "Mediante tal definição, um questionamento que se mostra relevante faz referência à diferença demarcada entre um artigo e uma monografia."
-  },
-  {
-    title: "Artigo Cientifico4",
-    body: "Mediante tal definição, um questionamento que se mostra relevante faz referência à diferença demarcada entre um artigo e uma monografia."
-  },
-  {
-    title: "Artigo Cientifico5",
-    body: "Mediante tal definição, um questionamento que se mostra relevante faz referência à diferença demarcada entre um artigo e uma monografia."
-  },
-])
+10.times do
+  Article.create([
+    {
+      title: "Artigo lorem ipsum ",
+      body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum auctor iaculis dapibus. Maecenas egestas rhoncus mauris eu fermentum. 
+      Pellentesque sed augue a libero lobortis tincidunt sed ut ex. Pellentesque dapibus, mauris id rutrum suscipit, augue enim varius sapien, 
+      egestas iaculis justo velit ac massa. Pellentesque sed porttitor dui. Vivamus ac diam ex. Curabitur non pulvinar justo, at scelerisque sem. 
+      Integer eleifend porta mauris eget tincidunt. Ut eu molestie odio, quis placerat tellus. 
+      Nullam nec magna nec massa posuere ullamcorper ut quis mauris. Pellentesque vel enim non ligula maximus commodo. 
+      Ut a sem lacinia, hendrerit augue ac, gravida ligula. Proin libero est, tristique eu tristique vel, facilisis sed metus. 
+      Nullam id dolor in nulla porttitor aliquet non id erat. Aenean ac ipsum non mauris tincidunt molestie id id dolor."
+    }
+  ])
+end
 
 reviews = Review.create([
   {
-    title: "Bom",
-    description: "Bom",
+    title: "Ótimo artigo!!",
+    description: "Muito interessante, gostei da abordagem em realção ao tema!!",
     score: 5,
-    article: articles.first
+    article: Article.first
   },
   {
-    title: "Ruim",
-    description: "Ruim",
+    title: "Artigo fraco",
+    description: "Muito sem conteúdo, não gostei da forma que foi desenvolvida, ficou muito confuso!",
     score: 1,
-    article: articles.first
+    article: Article.first
   }
 ])

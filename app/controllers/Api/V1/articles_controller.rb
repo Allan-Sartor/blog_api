@@ -1,12 +1,21 @@
 module Api
   module V1
     class ArticlesController < ApplicationController
-      # GET /articles
-      def index
-        @articles = Article.all
+    include Paginable
 
-        render json: ArticleSerializer.new(@articles, options).serialized_json 
-        # render json: {status: 'SUCCESS', message:'Artigos carregados', data: @articles}, status: 200
+      # GET /articles All
+      # def index
+      #   @articles = Article.all
+
+      #   render json: ArticleSerializer.new(@articles, options).serialized_json 
+      #   # render json: {status: 'SUCCESS', message:'Artigos carregados', data: @articles}, status: 200
+      # end
+
+      # GET /articles included pagination for articles 
+      def index
+        @articles = Article.page(current_page).per(per_page)
+    
+        render json: ArticleSerializer.new(@articles, meta_options).serialized_json 
       end
     
       # GET /articles/slug
@@ -64,6 +73,10 @@ module Api
 
         def options
           @options ||= { include: %i[reviews] }
+        end
+
+        def meta_options
+          @meta_options ||= { meta: meta_attributes(@articles) }
         end
     end
   end
