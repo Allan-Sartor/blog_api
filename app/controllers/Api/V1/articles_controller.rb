@@ -3,19 +3,11 @@ module Api
     class ArticlesController < ApplicationController
     include Paginable
 
-      # GET /articles All
-      # def index
-      #   @articles = Article.all
-
-      #   render json: ArticleSerializer.new(@articles, options).serialized_json 
-      #   # render json: {status: 'SUCCESS', message:'Artigos carregados', data: @articles}, status: 200
-      # end
-
-      # GET /articles included pagination for articles 
+      # GET /articles included pagination for articles
       def index
         @articles = Article.page(current_page).per(per_page)
     
-        render json: ArticleSerializer.new(@articles, meta_options).serialized_json 
+        render json: ArticleSerializer.new(@articles, meta_options).serialized_json
       end
     
       # GET /articles/slug
@@ -23,7 +15,6 @@ module Api
         @article = Article.find_by(slug: params[:slug])
 
         render json: ArticleSerializer.new(@article, options).serialized_json
-        # render json: {status: 'SUCCESS', message:'Artigo carregado', data: @article}, status: 200
       end
     
       # POST /articles
@@ -32,10 +23,8 @@ module Api
     
         if @article.save
           render json: ArticleSerializer.new(@article).serialized_json
-          # render json: {status: 'SUCCESS', message:'Artigo salvo!', data:@article}, status: 200
         else
           render json: {error: article.errors.messages }, status: 422
-          # render json: {status: 'ERROR', message:'Artigo não foi salvo!', data: @article.erros}, status: 422
         end
       end
     
@@ -45,10 +34,8 @@ module Api
 
         if @article.update(article_params)
           render json: ArticleSerializer.new(@article).serialized_json
-          # render json: {status: 'SUCCESS', message:'Artigo atualizado!', data: @article}, status: 200
         else
           render json: {error: article.errors.messages }, status: 422
-          # render json: {status: 'ERROR', message:'Artigo não foi atualizado!', data: @article.erros}, status: 422
         end
       end
     
@@ -57,11 +44,9 @@ module Api
         @article = Article.find_by(slug: params[:slug])
 
         if @article.destroy
-          # render json: {status: 'SUCCESS', message:'Artigo deletado!', data: @article}, status: 200
           head :no_content
         else
           render json: {error: article.errors.messages }, status: 422
-          # render json: {status: 'ERROR', message:'Artigo não foi deletado!', data: @article.erros}, status: 422
         end
       end
     
