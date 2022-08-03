@@ -11,7 +11,7 @@ services:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3001 -b '0.0.0.0'"
     volumes:
-      - .:/myapp
+      - .:/blog_api
     ports:
       - "3001:3001"
     depends_on:
