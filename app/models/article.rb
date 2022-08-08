@@ -5,6 +5,7 @@ class Article < ApplicationRecord
 
   validates :title, presence: true, uniqueness: true
   validates :body, presence: true
+  validates_associated :reviews
 
   def slugify
     self.slug = title.parameterize
