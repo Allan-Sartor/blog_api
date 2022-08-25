@@ -13,6 +13,8 @@ gem 'rack-cors'
 
 gem 'fast_jsonapi'
 
+gem 'active_model_serializers'
+
 gem "kaminari"
 
 gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
