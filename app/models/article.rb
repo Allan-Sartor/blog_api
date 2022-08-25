@@ -1,7 +1,11 @@
 class Article < ApplicationRecord
+  before_save :slugify
+
   has_many :reviews, dependent: :destroy
 
-  before_create :slugify
+  validates :title, presence: true, uniqueness: true
+  validates :body, presence: true
+  validates_associated :reviews
 
   def slugify
     self.slug = title.parameterize

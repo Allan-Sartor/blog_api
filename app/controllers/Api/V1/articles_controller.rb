@@ -1,5 +1,5 @@
 class Api::V1::ArticlesController < ApplicationController
-  before_action :article_find_by_slug, only: [:show, :update, :destroy]
+  before_action :article_find_by_slug, only: %i[ show update destroy ]
   include Paginable
 
   # GET /articles included pagination for articles
@@ -11,7 +11,7 @@ class Api::V1::ArticlesController < ApplicationController
     
   # GET /articles/slug
     def show
-      render json: ArticleSerializer.new(@article, options).serialized_json
+      render json: @article, status: :ok
     end
     
   # POST /articles
@@ -21,16 +21,16 @@ class Api::V1::ArticlesController < ApplicationController
     if @article.save
       render json: ArticleSerializer.new(@article).serialized_json
     else
-      render json: {error: article.errors.messages }, status: 422
+      render json: {error: @article.errors.messages }, status: 422
     end
   end
     
   # PATCH/PUT /articles/slug
   def update
     if @article.update(article_params)
-      render json: ArticleSerializer.new(@article).serialized_json
+      render json: @article,  status: :ok
     else
-      render json: {error: article.errors.messages }, status: 422
+      render json: @article.errors, status: :unprocessable_entity
     end
   end
     
@@ -39,7 +39,7 @@ class Api::V1::ArticlesController < ApplicationController
     if @article.destroy
       head :no_content
     else
-      render json: {error: article.errors.messages }, status: 422
+      render json: {error: @article.errors.messages }, status: 422
     end
   end
     
