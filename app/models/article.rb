@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-  before_create :slugify
+  before_save :slugify
 
   has_many :reviews, dependent: :destroy
 
